@@ -51,3 +51,64 @@
 // let b="10"
 // console.log(a!=b && a==10)
 // console.log(a!=b ||  a==10)
+
+
+
+//functions
+
+// function sample(){
+//     let result=document.getElementById("name").value
+//     console.log(result)
+//     let result=document.getElementById("name")
+//     console.log(result.value)
+
+
+//     document.getElementById("display").innerHTML=result.value
+//     let h2=document.getElementById("display")
+//     h2.innerHTML=result.value
+// }
+
+function add(){
+    let no1=parseInt(document.getElementById("no1").value)
+    let no2=parseInt(document.getElementById("no2").value)
+    let h2=document.getElementById("display")
+    h2.innerHTML=no1+no2
+}
+
+function sub(){
+    let no1=parseInt(document.getElementById("no1").value)
+    let no2=parseInt(document.getElementById("no2").value)
+    let h2=document.getElementById("display")
+    h2.innerHTML=no1-no2
+}
+function multi(){
+    let no1=parseInt(document.getElementById("no1").value)
+    let no2=parseInt(document.getElementById("no2").value)
+    let h2=document.getElementById("display")
+    h2.innerHTML=no1*no2
+}
+function div(){
+    let no1=parseInt(document.getElementById("no1").value)
+    let no2=parseInt(document.getElementById("no2").value)
+    let h2=document.getElementById("display")
+    h2.innerHTML=no1/no2
+}
+function mod(){
+    let no1=parseInt(document.getElementById("no1").value)
+    let no2=parseInt(document.getElementById("no2").value)
+    let h2=document.getElementById("display")
+    h2.innerHTML=no1%no2
+}
+
+function condition(){
+    let no1=parseInt(document.getElementById("no1").value)
+    let no2=parseInt(document.getElementById("no2").value)
+    let h2=document.getElementById("display")
+    if (no1==no2){
+        h2.innerHTML="equal"
+    }
+    else if(no1!=no2){
+        h2.innerHTML="not equal"
+    }   
+}
+
