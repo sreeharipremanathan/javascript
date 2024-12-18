@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form action="" id="form">
+        <input type="tel" name="" id="no" placeholder="enter number" required pattern="^[6-9]\d{9}">
+        <input type="submit" value="add">
+    </form> -->
+
+    <!-- <form action="" id="form">
+        <input type="tel" name="" id="no" placeholder="enter the number" required>
+        <input type="password" name="" id="pass" placeholder="enter the password">
+        <p id="a1"></p>
+        <p id="a2"></p>
+        <input type="submit" value="add">
+    </form> -->
+
+    <form action="" id="form">
+        <input type="password" name="" id="pswd" placeholder="enter the password" required>
+        <ul>
+            <li id="len">min len 8 characters</li>
+            <li id="cap">min 1 cap ltr</li>
+            <li id="small">min 1 small ltr</li>
+            <li id="no">min 1 no</li>
+            <li id="spl">min 1 spl chtr</li>
+            
+            
+        </ul>
+        <input type="submit" value="add">
+    </form>
+
+    <script>
+
+        // document.getElementById("form").addEventListener("submit",function(event){
+        //     event.preventDefault()
+        //     let no = document.getElementById("no").value
+        //     let pass=document.getElementById("pass").value
+        //     let a1=document.getElementById("a1")
+        //     let a2=document.getElementById("a2")
+        //     if(/^[6-9]\d{9}/.test(no)){
+        //         a1.innerHTML="valid"
+        //     }
+        //     else{
+        //         a1.innerHTML="invalid"
+        //     }
+        // })
+        let pswd=document.getElementById("pswd")
+        let len=document.getElementById("len")
+        let cap=document.getElementById("cap")
+        let small=document.getElementById("small")
+        let no=document.getElementById("no")
+        let spl=document.getElementById("spl")
+        pswd.addEventListener('input',function() {
+            let password=pswd.value
+            len.style.color=password.length>=8 ? 'green': 'red'
+            cap.style.color=/[A-Z]/.test(password) ? 'green': 'red'
+            small.style.color=/[a-z]/.test(password) ? 'green': 'red'
+            no.style.color=/\d/.test(password) ? 'green': 'red'
+            spl.style.color=/[!@#$%&*]/.test(password) ? 'green': 'red'
+        })
+
+        document.getElementById("form").addEventListener("submit",function(event){
+            event.preventDefault()
+            let password=document.getElementById("pswd").value
+            console.log(password);
+            
+            
+            if(password.length>=8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /\d/.test(password) && /[!@#$%&*]/.test(password)){
+                alert("valid")
+            }
+            else{
+                alert("invalid")
+            }
+        })
+
+
+    </script>
+</body>
+</html>
